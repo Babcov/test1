@@ -1,1 +1,11 @@
- yaml      entrypoint: sh      install:        - pip install -r requirements.txt      run:        - cd news_app        - gunicorn app:app      
+services:
+  - type: web
+    env: python
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.x.x # замените на версию Python, которую вы используете
+    source: .
+    startCommand: "python app.py"
+    disk:
+      name: web
+      mountPath: /
