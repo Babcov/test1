@@ -2,6 +2,9 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+app.config['TEMPLATES_AUTO_RELOAD'] = True # Если вы хотите автоматически перезагружать шаблоны при изменении
+app.jinja_env.auto_reload = True  # Если вы хотите автоматически перезагружать шаблоны при изменении
+
 news_articles = [
     {
         'title': 'Новость 1',
