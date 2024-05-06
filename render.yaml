@@ -1,0 +1,1 @@
+ yaml      entrypoint: sh      install:        - pip install -r requirements.txt      run:        - cd news_app        - gunicorn app:app      
